@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width intial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"./>
+        <title> Data/Apis</title>
+        
+    </head>
+    <body>
+        <img src="" id="rainbow"/>
+        <script>
+            catch_Rainbow();
+            // we use promises to 
+            console.log("started")
+            async function catch_Rainbow(){
+              const response= await fetch('rainbow.jpg') ;
+              const blob= await response.blob();
+              document.getElementById('rainbow').src=URL.createObjectURL(blob);
+              
+            }
+           /* fetch('rainbow.jpg').then(response => {
+              console.log(response)  
+              return response.blob();
+              
+            })
+            
+            .then(blob => {
+                console.log(blob);
+                document.getElementById('rainbow').src=URL.createObjectURL(blob);
+            })
+            .catch(error =>{
+                console.log('error!')
+                console.error(error);
+            })/*/
+        </script>
+    </body>
+</html>
